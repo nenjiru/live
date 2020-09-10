@@ -1,57 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <meta charset="utf-8">
-    <style>
-        * {
-            margin: 0;
-        }
+  <title>live test</title>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+    }
 
-        body,
-        html {
-            height: 100%;
-        }
-    </style>
+    body,
+    html {
+      height: 100%;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-    <!--
-    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://vimeo.com/event/285348/embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
-    <iframe id="ytplayer" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/y9efxQO2y-U?autoplay=1&mute=1&controls=0" frameborder="0"></iframe>
-    <video src="https://www.youtube.com/embed/y9efxQO2y-U" muted autoplay></video>
-    -->
-    
-    <div id="auto-play-video"></div>
-<script>
-  const videoId = "y9efxQO2y-U";
-  const videoPlayDivId = "auto-play-video";
-
-  // IFrame APIの読み込み
-  const scriptElm = document.createElement("script");
-  scriptElm.src = "https://www.youtube.com/iframe_api";
-  const headElm = document.querySelector("head");
-  headElm.appendChild(scriptElm);
-
-  // iframeで埋め込まれるプレイヤーの設定
-  function onYouTubeIframeAPIReady() {
-    const player = new YT.Player(videoPlayDivId, {
-      playerlets : {
-        playlist : videoId,
-        autoplay : 1,
-      },
-      events: {
-        "onReady": onPlayerReady
-      }
-    });
-  }
-
-  // プレイヤーの準備完了時に実行される関数
-  function onPlayerReady(event) {
-    const player = event.target
-    player.mute(); // 消音しないと自動再生されない
-    player.playVideo();
-  }
-</script>
-    
+  <iframe src="https://vimeo.com/event/285348/embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </body>
 </html>
